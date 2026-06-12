@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DailyWhy 🔬
+
+> Discover the science behind everyday life.
+
+DailyWhy is an AI-powered STEM learning platform that turns everyday curiosity into science lessons. Instead of starting with textbooks, it starts with questions students already have — and backs into the science from there.
+
+---
+
+## What it does
+
+Students pick a curiosity card, type their own question, and instantly get:
+
+- A plain-language explanation
+- The core STEM concepts involved
+- A fun fact
+- A safe at-home experiment
+- A mini quiz with instant feedback
+
+No uploads. No accounts. Just curiosity.
+
+---
+
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Landing page with cycling curiosity card hero |
+| `/explore` | Main app — card sidebar + AI answer panel |
+
+---
+
+## Tech Stack
+
+- **Next.js 14** — App Router
+- **TypeScript**
+- **Tailwind CSS**
+- **Gemini 2.0 Flash** — AI answers via Google Generative Language API
+- **Google Fonts** — Syne (display) + Inter (body)
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/your-username/dailywhy.git
+cd dailywhy
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Add your Gemini API key
+
+Create a `.env.local` file in the root of the project:
+
+Get a free key at [aistudio.google.com](https://aistudio.google.com).
+
+### 4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+app/
 
-To learn more about Next.js, take a look at the following resources:
+├── layout.tsx          # Root layout, fonts, metadata
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+├── globals.css         # Tailwind base + scrollbar utility
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+├── page.tsx            # Landing page
 
-## Deploy on Vercel
+└── explore/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+└── page.tsx        # Main explore page
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_GEMINI_API_KEY` | Your Google Gemini API key |
+
+---
+
+## Features
+
+- 🎴 **Curiosity Cards** — 18 pre-made questions filterable by STEM tag
+- 🔍 **Ask Anything** — Free-type any why question
+- 🧪 **Try It Yourself** — Safe at-home experiment per question
+- ✨ **Fun Facts** — One surprising fact per topic
+- 🎯 **Mini Quiz** — Multiple choice with instant feedback
+- 🌅 **Daily Why** — New mystery every day (coming soon)
+- 🏆 **Badges** — Earn points for exploring (coming soon)
+
+---
+
+## Roadmap
+
+- [ ] Daily Why push notifications
+- [ ] User accounts and progress tracking
+- [ ] Badge and points system
+- [ ] Mobile app (React Native)
+- [ ] Snap & Learn — photo input via Gemini Vision
+
+---
+
+## Built for
+
+This project was built as a hackathon submission. The goal was to show that curiosity-first learning is more engaging than curriculum-first learning — and that AI can power that experience in a simple, focused product.
+
+---
+
+## License
+
+MIT
