@@ -50,8 +50,7 @@ const CARDS: CardItem[] = [
 
 // ── Gemini API call ────────────────────────────────────────────────────────
 async function askGemini(question: string): Promise<AIResponse> {
-//   const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
-  const apiKey = "AIzaSyCwy-9dzBHcx5vgeodvzYRfI0g6-_wFbfI";
+  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
   const res = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
     {
